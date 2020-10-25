@@ -1,0 +1,32 @@
+<table id="mod_header">
+<tr><td width="100%"><span class="h18px"><a href="<{$xoops_url}>"><{$smarty.const._MD_eNoticias_HOME}></a> > <a href="<{$xoops_url}>/modules/<{$lang_moduledirname}>/index.php"><{$lang_modulename}></a> > <{$category.name}></span></td>
+<td width="100"><span class="h18right"><{$lang_modulename}></span></td></tr>
+</table>
+
+<table class="clean" cellspacing="0" cellpadding="0"><tr><td>
+<div class="picleft"><img class="pic" src="<{$xoops_url}>/<{$uploaddir}>/<{$category.image}>" width="80"></div>
+<h3 class="h3b"><{$category.name}></h3>
+<div><b><{$smarty.const._MD_eNoticias_BY}><{$category.author}></b></div>
+<div class="intro"><{$category.description}></div>
+<div class="nine"><{$smarty.const._MD_eNoticias_MAININDEXTOTAL}><{$category.total}></div>
+</table>
+<!-- Start topic loop -->
+<{foreach item=articles from=$articles}>
+<div class="art">
+<div class="clean99">
+<h4 class="arttitle"><{$articles.adminlinks}><{$articles.userlinks}><a href="article.php?articleID=<{$articles.id}>"><{$articles.headline}></a></h4> 
+</div>
+<div class="intro8"><{$articles.teaser}></div>
+
+<table class="clean" cellspacing="0" cellpadding="0"><tr><td valign="top">
+<div class="coldesc8"><{$smarty.const._MD_eNoticias_POSTED}><{$articles.datesub}> | <{$smarty.const._MD_eNoticias_TIMESREAD}><{$articles.counter}> | <{$articles.rating}> [<{$articles.votes}>]</div></td>
+<td>
+<div class="coldesc8" align="right" ><a href="article.php?articleID=<{$articles.id}>"><b><{$smarty.const._MD_eNoticias_MORE}></b></a></div>
+</td></tr></table>
+
+</div>
+<{/foreach}>
+
+<div align = 'left'><{$category.navbar}></div>
+<p><div align = 'center'> [ <a href='javascript:history.go(-1)'><{$smarty.const._MD_eNoticias_RETURN}></a><b> | </b><a href='./index.php'><{$smarty.const._MD_eNoticias_RETURN2INDEX}></a> ] </div>
+<{include file='db:system_notification_select.html'}>

@@ -1,0 +1,5 @@
+<ul>
+  <{foreach item=newarts from=$block.newarts}>
+    <li><a href="<{$xoops_url}>/modules/<{$newarts.dir}>/article.php?articleID=<{$newarts.id}>"><{$newarts.linktext}></a> [<{$newarts.new}>]</li>
+  <{/foreach}>
+</ul>

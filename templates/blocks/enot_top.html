@@ -1,0 +1,5 @@
+<ul>
+  <{foreach item=toparticles from=$block.toparticles}>
+    <li><a href="<{$xoops_url}>/modules/<{$toparticles.dir}>/article.php?articleID=<{$toparticles.id}>"><{$toparticles.linktext}></a> [<{$toparticles.new}>]</li>
+  <{/foreach}>
+</ul>

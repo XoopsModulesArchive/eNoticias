@@ -1,0 +1,45 @@
+<{if $block.verticaltemplate == 1}>
+	<div class="columnlink"><a href="<{$xoops_url}>/modules/eNoticias/column.php?columnID=<{$block.colID}>"><{$block.name}></a></div>
+	<h4 style="margin: 6px 0;"><a href="<{$xoops_url}>/modules/eNoticias/article.php?articleID=<{$block.storyID}>"><{$block.title}></a></h4>
+
+	<{if $block.showdateask == 1}><div style="font-size: xx-small; margin: 0 0 6px 0;"><{$block.date}></div><{/if}>
+	<{if $block.showbylineask == 1}><{$smarty.const._MB_eNoticias_BY}><{$block.authorname}><br><{/if}>
+
+	<div style="margin: 8px 0 2px 0;">
+	<{if $block.colimage}>
+	<div style="float: left; width: 80px; margin-right: 10px; border: 1px solid black; "><img src="<{$xoops_url}>/modules/eNoticias/images/uploads/<{$block.colimage}>"></div>
+	<{/if}>
+	<{$block.introtext}></div>
+	<{if $block.showstatsask == 1}><div style="font-size: xx-small; margin-top: 4px;"><{$smarty.const._MB_eNoticias_HIT}><{$block.hits}><{$smarty.const._MB_eNoticias_RATE}><{$block.rating}><{$smarty.const._MB_eNoticias_VOTE}><{$block.votes}></div><{/if}>
+
+	<div class="eNoticias_spottitle"><a href="<{$xoops_url}>/modules/eNoticias/column.php?columnID=<{$block.colID}>"><{$smarty.const._MB_eNoticias_MOREHERE}></a></div>
+	<ul>
+	<{foreach item=morelinks from=$block.links}>
+	<li><a href="<{$xoops_url}>/modules/eNoticias/article.php?articleID=<{$morelinks.id}>"><{$morelinks.head}></a> [<{$morelinks.subdate}>]</li>
+	<{/foreach}>
+	</ul>
+<{elseif verticaltemplate == 0}>
+	<div style="float:left; width: 48%; margin-right: 10px;">
+	<div class="eNoticias_spottitle"><a href="<{$xoops_url}>/modules/eNoticias/column.php?columnID=<{$block.colID}>"><{$block.name}></a></div>
+	<h4 style="margin: 6px 0;"><a href="<{$xoops_url}>/modules/eNoticias/article.php?articleID=<{$block.storyID}>"><{$block.title}></a></h4>
+
+	<{if $block.showdateask == 1}><div style="font-size: xx-small; margin: 0 0 6px 0;"><{$block.date}></div><{/if}>
+	<{if $block.showbylineask == 1}><{$smarty.const._MB_eNoticias_BY}><{$block.authorname}><br><{/if}>
+	<div style="margin: 8px 0 2px 0;"><{if $block.showpicask == 1}>
+	<{if $block.colimage}>
+	<div style="float: left; width: 80px; margin-right: 10px; border: 1px solid black; "><img src="<{$xoops_url}>/modules/eNoticias/images/uploads/<{$block.colimage}>"></div>
+	<{/if}>
+	<{/if}>
+	<{$block.introtext}></div>
+	<{if $block.showstatsask == 1}><div style="font-size: xx-small; margin-top: 4px;"><{$smarty.const._MB_eNoticias_HIT}><{$block.hits}><{$smarty.const._MB_eNoticias_RATE}><{$block.rating}><{$smarty.const._MB_eNoticias_VOTE}><{$block.votes}></div><{/if}>
+	</div>
+	<div>
+	<div class="eNoticias_spottitle"><a href="<{$xoops_url}>/modules/eNoticias/column.php?columnID=<{$block.colID}>"><{$smarty.const._MB_eNoticias_MOREHERE}></a></div>
+	<ul>
+	<{foreach item=morelinks from=$block.links}>
+	<li><a href="<{$xoops_url}>/modules/eNoticias/article.php?articleID=<{$morelinks.id}>"><{$morelinks.head}></a> [<{$morelinks.subdate}>]</li>
+	<{/foreach}>
+	</ul>
+	</div>
+	<div style="height: 0; clear: both;"></div>
+<{/if}>

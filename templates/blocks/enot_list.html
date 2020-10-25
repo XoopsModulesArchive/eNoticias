@@ -1,0 +1,11 @@
+<table class="eNoticias_block_list" >
+  <{foreach item=listcol from=$block.listcol}>
+  <tr>
+    <td style="width:40px"><img style="width:40px" src="<{$xoops_url}>/modules/eNoticias/images/uploads/<{$listcol.colimage}>"></td>
+    <td>
+		<div id="eNoticias_columnTitle"><a href="<{$xoops_url}>/modules/eNoticias/column.php?columnID=<{$listcol.colid}>"><{$listcol.colname}></a></div>
+		<div id="eNoticias_articleTitle"><a href="<{$xoops_url}>/modules/eNoticias/article.php?articleID=<{$listcol.artid}>"><{$listcol.coltitle}></a></div>
+	</td>
+  </tr>
+  <{/foreach}>
+</table>

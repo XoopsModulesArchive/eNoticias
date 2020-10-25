@@ -1,0 +1,5 @@
+<ul>
+  <{foreach item=artlink from=$block.artslist}>
+    <li><a href="<{$xoops_url}>/modules/<{$artlink.dir}>/article.php?articleID=<{$artlink.id}>"><{$artlink.linktext}></a> [<{$artlink.new}>, <{$artlink.votes}>]</li>
+  <{/foreach}>
+</ul>

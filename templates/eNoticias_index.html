@@ -1,0 +1,35 @@
+<table id="mod_header">
+<tr><td width="100%"><span class="h18px"><a href="<{$xoops_url}>"><{$smarty.const._MD_eNoticias_HOME}></a> > <{$lang_modulename}></span></td>
+<td width="100"><span class="h18right"><{$lang_modulename}></span></td></tr>
+</table>
+
+<h3 class="h3a"><{$lang_mainhead}></h3>
+<span class="intro"><{$smarty.const._MD_eNoticias_MAININTRO}></span>
+
+<{if $lang_nothing != ''}>
+<div class="nocontent"><div class="padded"><{$lang_nothing}></div></div>
+<{/if}>
+
+<div>
+<{foreach item=columna from=$cols}>
+<table cellspacing="0" cellpadding="0" class="col_header">
+<tr><td class="left"><a class="columnlink" href="column.php?columnID=<{$columna.columnID}>"><{$columna.name}></a></td>
+<td class="right"><{$smarty.const._MD_eNoticias_BY}> <{$columna.authorname}></td></tr>
+<tr>
+<td colspan="2">
+<span class="picleft"><img class="pic" src="<{$xoops_url}>/<{$uploaddir}>/<{$columna.colimage}>"></span>
+
+<{foreach item=articulo from=$columna.content}>
+<h4 class="h3a"><{$articulo.adminlinks}><{$articulo.userlinks}><a href="<{$xoops_url}>/modules/<{$lang_moduledirname}>/article.php?articleID=<{$articulo.articleID}>"><{$articulo.headline}></a></h4>
+<div class="subdate"><{$articulo.datesub}></div>
+<div class="teaser"><{$articulo.teaser}></div>
+<{/foreach}>
+
+<div class="coldesc"><{$columna.description}></div>
+<div class="nine"><{$smarty.const._MD_eNoticias_ARTCOUNT}><{$columna.totalarts}><{$smarty.const._MD_eNoticias_ARTICLES}></div>
+</td>
+</tr>
+</table>
+<{/foreach}>
+<div><{$columna.navbar}></div>
+</div>
